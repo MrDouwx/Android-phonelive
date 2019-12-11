@@ -1,0 +1,19 @@
+ext {
+    android = [
+            compileSdkVersion: 27,
+            buildToolsVersion: "27.0.3",
+            minSdkVersion    : 21,
+            targetSdkVersion : 27,
+            versionCode      : 17,
+            versionName      : "3.6.4"
+    ]
+
+    dependencies = [
+            "appcompat-v7"    : "com.android.support:appcompat-v7:27.1.1",
+            "recyclerview-v7" : 'com.android.support:recyclerview-v7:27.1.1',
+            "design"          : 'com.android.support:design:27.1.1',
+            "roundedimageview": 'com.makeramen:roundedimageview:2.3.0', //带圆角，边框的的ImageView
+            "cardview-v7"     : 'com.android.support:cardview-v7:27.1.1'
+    ]
+
+}

@@ -1,0 +1,129 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    signingConfigs {
+        release {
+            keyAlias 'phonelive'
+            keyPassword 'sevenshuyun'
+            storeFile file('../7shuyun.jks')
+            storePassword 'sevenshuyun'
+        }
+    }
+
+
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+    }
+    defaultConfig {
+//        applicationId "com.yunbao.phonelive"
+        applicationId "com.sevenshuyun.phonelive"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    repositories {
+        flatDir{
+            dirs 'libs','../libs'
+        }
+    }
+}
+
+//repositories {
+//    flatDir {
+//        dirs 'libs'  //,'../libs'
+//    }
+//}
+
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["recyclerview-v7"]
+    implementation rootProject.ext.dependencies["cardview-v7"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation 'com.android.support:multidex:1.0.1'
+//    implementation files('../libs/commons-io-1.4.jar')
+//    implementation files('libs/commons-io-1.4.jar')
+    api files('../libs/commons-io-1.4.jar')
+    //网络请求
+    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //OkGo上传下载扩展库
+    implementation 'com.lzy.net:okserver:2.0.5'
+    //socket.io
+    implementation('io.socket:socket.io-client:1.0.0') {
+        exclude group: 'org.json', module: 'json'
+    }
+    //fastJson解析json
+    implementation 'com.alibaba:fastjson:1.1.70.android'
+    //金山播放和推流SDK
+    implementation 'com.ksyun.media:libksylive-java:3.0.4'
+    implementation 'com.ksyun.media:libksylive-armv7a:3.0.4'
+    //eventbus事件总线
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    //使用Glide加载图片
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    //gif库，播放礼物gif用
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.15'
+    //带圆角，边框的的ImageView
+    implementation rootProject.ext.dependencies["roundedimageview"]
+    //一个基于Glide的transformation库,拥有裁剪,着色,模糊,滤镜等多种转换效果
+    implementation 'jp.wasabeef:glide-transformations:2.0.2'
+    //腾讯短视频sdk
+    implementation(name: 'LiteAVSDK_UGC_4.4.3774', ext: 'aar')
+    //腾讯bugly
+    implementation 'com.tencent.bugly:crashreport:2.6.6'
+    //腾讯定位，地图sdk
+    implementation files('libs/TencentLocationSdk_v6.2.5.3.jar')
+    implementation files('libs/TencentMapSDK_1.2.8.1.jar')
+    //腾讯云存储
+    implementation 'com.tencent.qcloud:cosxml:5.4.13'
+//    implementation 'com.tencent.cos:cos:4.3.2+@aar'
+    //七牛云存储
+    implementation 'com.qiniu:qiniu-android-sdk:7.2.1'
+    //百度语音识别
+    implementation files('libs/bdasr_3.0.8.2.jar')
+    //微信sdk,支付登录分享
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:5.1.6'
+    //支付宝sdk
+    implementation files('libs/alipaySdk-20180601.jar')
+    //极光 推送,IM
+    api project(':jpush')
+    //shareSDK
+    api project(':mob')
+    //萌颜
+    api project(':beauty')
+    //游戏
+    api project(':game')
+    //短视频
+    api project(':video')
+    //友盟统计
+    implementation 'com.umeng.sdk:common:1.5.3'
+    implementation 'com.umeng.sdk:analytics:7.5.3'
+    implementation 'com.github.yalantis:ucrop:2.2.2'
+    //svga
+    implementation 'com.github.yyued:SVGAPlayer-Android:2.4.0'
+    implementation(name: 'LiteAVSDK_UGC_4.4.3774', ext: 'aar')
+    implementation(name: 'ti-sdk', ext: 'aar')
+}

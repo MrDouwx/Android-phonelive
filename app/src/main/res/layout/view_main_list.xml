@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="110dp"
+        android:overScrollMode="never"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        >
+
+        <com.sevenshuyun.phonelive.custom.RatioImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@mipmap/bg_list"
+            app:ri_ratio="0.973"
+            />
+
+        <com.sevenshuyun.phonelive.custom.ViewPagerIndicator
+            android:id="@+id/indicator"
+            android:layout_width="140dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="43dp"
+            android:layout_marginTop="28dp"
+            app:bold="true"
+            app:change_size="false"
+            app:currentItem="0"
+            app:indicatorColor="@color/white"
+            app:indicatorHeight="3dp"
+            app:indicatorWidth="22dp"
+            app:lightColor="@color/white"
+            app:normalColor="#ccffffff"
+            app:title_textSize="18sp"
+            app:visibleItemCount="2"
+            />
+
+        <com.sevenshuyun.phonelive.custom.MyLinearLayout1
+            android:id="@+id/radio_group_wrap"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="70dp"
+            android:orientation="horizontal"
+            >
+
+            <com.sevenshuyun.phonelive.custom.MyFrameLayout1
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                >
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/btn_pro_day"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/main_list_day"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_pro_week"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_week"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_pro_month"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_month"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_pro_all"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_all"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                </RadioGroup>
+
+            </com.sevenshuyun.phonelive.custom.MyFrameLayout1>
+
+            <com.sevenshuyun.phonelive.custom.MyFrameLayout1
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                >
+
+                <RadioGroup
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/btn_con_day"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="@string/main_list_day"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_con_week"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_week"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_con_month"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_month"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/btn_con_all"
+                        android:layout_width="60dp"
+                        android:layout_height="26dp"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/bg_list_btn"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="@string/main_list_all"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        />
+
+                </RadioGroup>
+            </com.sevenshuyun.phonelive.custom.MyFrameLayout1>
+
+        </com.sevenshuyun.phonelive.custom.MyLinearLayout1>
+    </FrameLayout>
+
+</FrameLayout>
